@@ -1,0 +1,22 @@
+[
+  {
+    "identificador": "LF001",
+    "data": "2025-02-26",
+    "valor": 1500.0,
+    "tipo": "RECEITA",
+    "conta": "1001",
+    "descricao": "Venda à vista",
+    "id": "a03c56fe-c81c-4b50-aef0-a80ae2aaae20",
+    "timestamp": "2025-02-26T08:52:37.038198"
+  },
+  {
+    "identificador": "LF002",
+    "data": "2025-02-26",
+    "valor": 500.0,
+    "tipo": "DESPESA",
+    "conta": "2001",
+    "descricao": "Pagamento de fornecedor",
+    "id": "746c3dcf-1b71-4e97-8a60-09bc4b1e8f97",
+    "timestamp": "2025-02-26T08:52:37.043374"
+  }
+]

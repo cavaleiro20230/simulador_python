@@ -1,0 +1,782 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Nasajon API Simulation",
+    "description": "API para simulação de integração com todos os módulos do sistema Nasajon",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Empresa",
+      "url": "www.empresa.com",
+      "email": "suporte@empresa.com"
+    }
+  },
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "X-API-Key"
+    }
+  },
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ],
+  "paths": {
+    "/financeiro/lancamentos": {
+      "post": {
+        "tags": [
+          "Financeiro"
+        ],
+        "summary": "Criar lançamento financeiro",
+        "description": "Cria um novo lançamento financeiro no sistema",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "lancamento",
+            "description": "Dados do lançamento financeiro",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LancamentoFinanceiro"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Lançamento criado com sucesso",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Financeiro"
+        ],
+        "summary": "Listar lançamentos financeiros",
+        "description": "Lista todos os lançamentos financeiros",
+        "responses": {
+          "200": {
+            "description": "Lista de lançamentos",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LancamentoFinanceiro"
+              }
+            }
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/contabil/lancamentos": {
+      "post": {
+        "tags": [
+          "Contábil"
+        ],
+        "summary": "Criar lançamento contábil",
+        "description": "Cria um novo lançamento contábil no sistema",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "lancamento",
+            "description": "Dados do lançamento contábil",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LancamentoContabil"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Lançamento criado com sucesso",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/fiscal/notas-fiscais": {
+      "post": {
+        "tags": [
+          "Fiscal"
+        ],
+        "summary": "Emitir nota fiscal",
+        "description": "Emite uma nova nota fiscal no sistema",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "notaFiscal",
+            "description": "Dados da nota fiscal",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NotaFiscal"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Nota fiscal emitida com sucesso",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/rh/funcionarios": {
+      "post": {
+        "tags": [
+          "RH"
+        ],
+        "summary": "Cadastrar funcionário",
+        "description": "Cadastra um novo funcionário no sistema",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "funcionario",
+            "description": "Dados do funcionário",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Funcionario"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Funcionário cadastrado com sucesso",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/compras/pedidos": {
+      "post": {
+        "tags": [
+          "Compras"
+        ],
+        "summary": "Criar pedido de compra",
+        "description": "Cria um novo pedido de compra no sistema",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pedido",
+            "description": "Dados do pedido de compra",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PedidoCompra"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Pedido criado com sucesso",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/vendas/pedidos": {
+      "post": {
+        "tags": [
+          "Vendas"
+        ],
+        "summary": "Criar pedido de venda",
+        "description": "Cria um novo pedido de venda no sistema",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pedido",
+            "description": "Dados do pedido de venda",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PedidoVenda"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Pedido criado com sucesso",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/estoque/produtos": {
+      "post": {
+        "tags": [
+          "Estoque"
+        ],
+        "summary": "Cadastrar produto",
+        "description": "Cadastra um novo produto no sistema",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "produto",
+            "description": "Dados do produto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Produto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Produto cadastrado com sucesso",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/patrimonio/bens": {
+      "post": {
+        "tags": [
+          "Patrimônio"
+        ],
+        "summary": "Cadastrar bem patrimonial",
+        "description": "Cadastra um novo bem patrimonial no sistema",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bem",
+            "description": "Dados do bem patrimonial",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BemPatrimonial"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Bem patrimonial cadastrado com sucesso",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "Sistema"
+        ],
+        "summary": "Status da API",
+        "description": "Retorna o status atual da API",
+        "responses": {
+          "200": {
+            "description": "Status da API",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "timestamp": {
+                  "type": "string"
+                },
+                "modules": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "LancamentoFinanceiro": {
+      "type": "object",
+      "required": [
+        "identificador",
+        "data",
+        "valor",
+        "tipo",
+        "conta"
+      ],
+      "properties": {
+        "identificador": {
+          "type": "string",
+          "description": "Identificador único do lançamento"
+        },
+        "data": {
+          "type": "string",
+          "format": "date",
+          "description": "Data do lançamento (YYYY-MM-DD)"
+        },
+        "valor": {
+          "type": "number",
+          "format": "double",
+          "description": "Valor do lançamento"
+        },
+        "tipo": {
+          "type": "string",
+          "enum": ["RECEITA", "DESPESA"],
+          "description": "Tipo do lançamento"
+        },
+        "conta": {
+          "type": "string",
+          "description": "Código da conta contábil"
+        },
+        "descricao": {
+          "type": "string",
+          "description": "Descrição do lançamento"
+        }
+      }
+    },
+    "LancamentoContabil": {
+      "type": "object",
+      "required": [
+        "identificador",
+        "data",
+        "valor",
+        "debito",
+        "credito"
+      ],
+      "properties": {
+        "identificador": {
+          "type": "string",
+          "description": "Identificador único do lançamento"
+        },
+        "data": {
+          "type": "string",
+          "format": "date",
+          "description": "Data do lançamento (YYYY-MM-DD)"
+        },
+        "valor": {
+          "type": "number",
+          "format": "double",
+          "description": "Valor do lançamento"
+        },
+        "debito": {
+          "type": "string",
+          "description": "Conta de débito"
+        },
+        "credito": {
+          "type": "string",
+          "description": "Conta de crédito"
+        },
+        "historico": {
+          "type": "string",
+          "description": "Histórico do lançamento"
+        }
+      }
+    },
+    "NotaFiscal": {
+      "type": "object",
+      "required": [
+        "numero",
+        "data",
+        "valor",
+        "cliente",
+        "itens"
+      ],
+      "properties": {
+        "numero": {
+          "type": "string",
+          "description": "Número da nota fiscal"
+        },
+        "data": {
+          "type": "string",
+          "format": "date",
+          "description": "Data de emissão (YYYY-MM-DD)"
+        },
+        "valor": {
+          "type": "number",
+          "format": "double",
+          "description": "Valor total da nota"
+        },
+        "cliente": {
+          "$ref": "#/definitions/Cliente"
+        },
+        "itens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItemNotaFiscal"
+          }
+        }
+      }
+    },
+    "Cliente": {
+      "type": "object",
+      "required": [
+        "cnpj",
+        "nome"
+      ],
+      "properties": {
+        "cnpj": {
+          "type": "string",
+          "description": "CNPJ do cliente"
+        },
+        "nome": {
+          "type": "string",
+          "description": "Nome do cliente"
+        }
+      }
+    },
+    "ItemNotaFiscal": {
+      "type": "object",
+      "required": [
+        "codigo",
+        "descricao",
+        "quantidade",
+        "valorUnitario"
+      ],
+      "properties": {
+        "codigo": {
+          "type": "string",
+          "description": "Código do produto"
+        },
+        "descricao": {
+          "type": "string",
+          "description": "Descrição do produto"
+        },
+        "quantidade": {
+          "type": "number",
+          "description": "Quantidade"
+        },
+        "valorUnitario": {
+          "type": "number",
+          "format": "double",
+          "description": "Valor unitário"
+        }
+      }
+    },
+    "Funcionario": {
+      "type": "object",
+      "required": [
+        "matricula",
+        "nome",
+        "cpf",
+        "cargo",
+        "salario"
+      ],
+      "properties": {
+        "matricula": {
+          "type": "string",
+          "description": "Matrícula do funcionário"
+        },
+        "nome": {
+          "type": "string",
+          "description": "Nome completo"
+        },
+        "cpf": {
+          "type": "string",
+          "description": "CPF do funcionário"
+        },
+        "cargo": {
+          "type": "string",
+          "description": "Cargo"
+        },
+        "salario": {
+          "type": "number",
+          "format": "double",
+          "description": "Salário"
+        },
+        "dataAdmissao": {
+          "type": "string",
+          "format": "date",
+          "description": "Data de admissão (YYYY-MM-DD)"
+        }
+      }
+    },
+    "PedidoCompra": {
+      "type": "object",
+      "required": [
+        "numero",
+        "data",
+        "fornecedor",
+        "itens"
+      ],
+      "properties": {
+        "numero": {
+          "type": "string",
+          "description": "Número do pedido"
+        },
+        "data": {
+          "type": "string",
+          "format": "date",
+          "description": "Data do pedido (YYYY-MM-DD)"
+        },
+        "fornecedor": {
+          "$ref": "#/definitions/Fornecedor"
+        },
+        "itens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItemPedido"
+          }
+        }
+      }
+    },
+    "Fornecedor": {
+      "type": "object",
+      "required": [
+        "cnpj",
+        "nome"
+      ],
+      "properties": {
+        "cnpj": {
+          "type": "string",
+          "description": "CNPJ do fornecedor"
+        },
+        "nome": {
+          "type": "string",
+          "description": "Nome do fornecedor"
+        }
+      }
+    },
+    "PedidoVenda": {
+      "type": "object",
+      "required": [
+        "numero",
+        "data",
+        "cliente",
+        "itens"
+      ],
+      "properties": {
+        "numero": {
+          "type": "string",
+          "description": "Número do pedido"
+        },
+        "data": {
+          "type": "string",
+          "format": "date",
+          "description": "Data do pedido (YYYY-MM-DD)"
+        },
+        "cliente": {
+          "$ref": "#/definitions/Cliente"
+        },
+        "itens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItemPedido"
+          }
+        }
+      }
+    },
+    "ItemPedido": {
+      "type": "object",
+      "required": [
+        "codigo",
+        "descricao",
+        "quantidade",
+        "valorUnitario"
+      ],
+      "properties": {
+        "codigo": {
+          "type": "string",
+          "description": "Código do produto"
+        },
+        "descricao": {
+          "type": "string",
+          "description": "Descrição do produto"
+        },
+        "quantidade": {
+          "type": "number",
+          "description": "Quantidade"
+        },
+        "valorUnitario": {
+          "type": "number",
+          "format": "double",
+          "description": "Valor unitário"
+        }
+      }
+    },
+    "Produto": {
+      "type": "object",
+      "required": [
+        "codigo",
+        "descricao",
+        "unidade",
+        "preco"
+      ],
+      "properties": {
+        "codigo": {
+          "type": "string",
+          "description": "Código do produto"
+        },
+        "descricao": {
+          "type": "string",
+          "description": "Descrição do produto"
+        },
+        "unidade": {
+          "type": "string",
+          "description": "Unidade de medida"
+        },
+        "preco": {
+          "type": "number",
+          "format": "double",
+          "description": "Preço unitário"
+        }
+      }
+    },
+    "BemPatrimonial": {
+      "type": "object",
+      "required": [
+        "codigo",
+        "descricao",
+        "valor",
+        "dataAquisicao"
+      ],
+      "properties": {
+        "codigo": {
+          "type": "string",
+          "description": "Código do bem"
+        },
+        "descricao": {
+          "type": "string",
+          "description": "Descrição do bem"
+        },
+        "valor": {
+          "type": "number",
+          "format": "double",
+          "description": "Valor de aquisição"
+        },
+        "dataAquisicao": {
+          "type": "string",
+          "format": "date",
+          "description": "Data de aquisição (YYYY-MM-DD)"
+        }
+      }
+    }
+  }
+}

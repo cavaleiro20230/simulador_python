@@ -1,0 +1,34 @@
+{
+  "timestamp": "2025-02-26T08:52:37.214273",
+  "estatisticas": {
+    "financeiro": {
+      "total_registros": 2,
+      "total_receitas": 1500.0,
+      "total_despesas": 500.0,
+      "saldo": 1000.0
+    },
+    "contabil": {
+      "total_registros": 1
+    },
+    "fiscal": {
+      "total_registros": 1,
+      "total_valor_notas": 1500.0,
+      "media_valor": 1500.0
+    },
+    "rh": {
+      "total_registros": 1
+    },
+    "compras": {
+      "total_registros": 1
+    },
+    "vendas": {
+      "total_registros": 1
+    },
+    "estoque": {
+      "total_registros": 1
+    },
+    "patrimonio": {
+      "total_registros": 1
+    }
+  }
+}

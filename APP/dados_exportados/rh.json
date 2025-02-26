@@ -1,0 +1,12 @@
+[
+  {
+    "matricula": "F001",
+    "nome": "João Silva",
+    "cpf": "12345678900",
+    "cargo": "Analista",
+    "salario": 5000.0,
+    "dataAdmissao": "2025-02-26",
+    "id": "c8be56db-e027-4af1-9166-6e23b7361fe3",
+    "timestamp": "2025-02-26T08:52:37.077905"
+  }
+]

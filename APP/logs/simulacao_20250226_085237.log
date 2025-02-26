@@ -1,0 +1,20 @@
+[2025-02-26 08:52:37] Simulação Nasajon iniciada
+[2025-02-26 08:52:37] Lançamento financeiro criado: LF001
+[2025-02-26 08:52:37] Lançamento financeiro criado: LF002
+[2025-02-26 08:52:37] Lançamento contábil criado: LC001
+[2025-02-26 08:52:37] Nota fiscal emitida: NF001
+[2025-02-26 08:52:37] Arquivo da nota fiscal gerado: notas_fiscais\NF_NF001.json
+[2025-02-26 08:52:37] Funcionário cadastrado: João Silva
+[2025-02-26 08:52:37] Pedido de compra criado: PC001
+[2025-02-26 08:52:37] Pedido de venda criado: PV001
+[2025-02-26 08:52:37] Produto cadastrado: P001
+[2025-02-26 08:52:37] Bem patrimonial cadastrado: B001
+[2025-02-26 08:52:37] Dados do módulo financeiro exportados para dados_exportados\financeiro.json
+[2025-02-26 08:52:37] Dados do módulo contabil exportados para dados_exportados\contabil.json
+[2025-02-26 08:52:37] Dados do módulo fiscal exportados para dados_exportados\fiscal.json
+[2025-02-26 08:52:37] Dados do módulo rh exportados para dados_exportados\rh.json
+[2025-02-26 08:52:37] Dados do módulo compras exportados para dados_exportados\compras.json
+[2025-02-26 08:52:37] Dados do módulo vendas exportados para dados_exportados\vendas.json
+[2025-02-26 08:52:37] Dados do módulo estoque exportados para dados_exportados\estoque.json
+[2025-02-26 08:52:37] Dados do módulo patrimonio exportados para dados_exportados\patrimonio.json
+[2025-02-26 08:52:37] Relatório gerado: relatorios\relatorio_20250226_085237.json

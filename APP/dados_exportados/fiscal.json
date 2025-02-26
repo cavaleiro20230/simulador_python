@@ -1,0 +1,21 @@
+[
+  {
+    "numero": "NF001",
+    "data": "2025-02-26",
+    "valor": 1500.0,
+    "cliente": {
+      "cnpj": "12345678000100",
+      "nome": "Cliente Exemplo"
+    },
+    "itens": [
+      {
+        "codigo": "001",
+        "descricao": "Produto A",
+        "quantidade": 1,
+        "valorUnitario": 1500.0
+      }
+    ],
+    "id": "bed5e473-2d44-4596-9d7d-8cff41cfb6b6",
+    "timestamp": "2025-02-26T08:52:37.057547"
+  }
+]

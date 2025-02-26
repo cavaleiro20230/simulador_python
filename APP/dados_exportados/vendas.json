@@ -1,0 +1,20 @@
+[
+  {
+    "numero": "PV001",
+    "data": "2025-02-26",
+    "cliente": {
+      "cnpj": "12345678000100",
+      "nome": "Cliente Exemplo"
+    },
+    "itens": [
+      {
+        "codigo": "001",
+        "descricao": "Produto A",
+        "quantidade": 1,
+        "valorUnitario": 1500.0
+      }
+    ],
+    "id": "d936a083-3627-42ee-be02-74518363ffaf",
+    "timestamp": "2025-02-26T08:52:37.094529"
+  }
+]

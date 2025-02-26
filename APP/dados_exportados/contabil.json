@@ -1,0 +1,12 @@
+[
+  {
+    "identificador": "LC001",
+    "data": "2025-02-26",
+    "valor": 1500.0,
+    "debito": "1001",
+    "credito": "2001",
+    "historico": "Venda à vista",
+    "id": "b7de5ef7-080c-408c-bb55-29de8a9a02b8",
+    "timestamp": "2025-02-26T08:52:37.049375"
+  }
+]
